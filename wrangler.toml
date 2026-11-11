@@ -1,3 +1,17 @@
 name = "cfnew"
 main = "_worker.js"
 compatibility_date = "2026-01-20"
+
+# KV 绑定：变量名 C，Cloudflare Dashboard 中创建 KV Namespace 后
+# 把下面 id 替换为真实的 KV Namespace ID，否则订阅/配置保存功能不可用。
+[[kv_namespaces]]
+binding = "C"
+id = "REPLACE_WITH_YOUR_KV_ID"
+
+# 变量（在 Cloudflare Dashboard > Workers > cfnew > Settings > Variables 中设置，
+# 不要写进本文件或提交到 Git）：
+#   u  = UUID（必填，VLESS/Trojan 订阅的密码，例如用 uuidgen 生成）
+#   s  = SOCKS5 家宽落地地址（可选，住宅 IP 出口用；格式 user:pass@host:port 或 host:port）
+#   p  = proxyip（可选，Cloudflare 优选 IP / 反代地址）
+#   wk = 地区/国家筛选（可选，例如 HK,JP,SG,US）
+#   d  = 自定义订阅路径（可选）
